@@ -32,4 +32,13 @@ describe('UsersController', () => {
   it('should return all users', () => {
     expect(controller.getAllUsers()).toEqual(mockUsers);
   });
+
+  it('should return user by ID', () => {
+    expect(controller.getUserById('1')).toEqual(mockUsers[0]);
+  });
+
+  it('should throw if user not found', () => {
+    jest.spyOn(service, 'getUserById').mockReturnValue(undefined);
+    expect(() => controller.getUserById('999')).toThrow();
+  });
 });

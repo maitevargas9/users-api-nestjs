@@ -29,4 +29,12 @@ describe('UsersService', () => {
     });
     expect(() => service.getAllUsers()).toThrow();
   });
+
+  it('should return user by ID', () => {
+    const mockData = JSON.stringify([
+      { id: 2, name: 'Test User 2', email: 'test2@example.com' },
+    ]);
+    (fs.readFileSync as jest.Mock).mockReturnValue(mockData);
+    expect(service.getUserById(2)).toEqual(JSON.parse(mockData)[0]);
+  });
 });

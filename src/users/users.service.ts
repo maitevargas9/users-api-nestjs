@@ -14,4 +14,9 @@ export class UsersService {
       throw new InternalServerErrorException('Could not load user data');
     }
   }
+
+  getUserById(id: number) {
+    const users = this.getAllUsers();
+    return users.find((user) => user.id === id);
+  }
 }
