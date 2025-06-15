@@ -4,7 +4,7 @@ import * as path from 'path';
 
 @Injectable()
 export class UsersService {
-  private readonly filePath = path.join(__dirname, '..', 'users.json');
+  private readonly filePath = path.resolve(process.cwd(), 'src', 'users.json');
 
   getAllUsers() {
     try {
