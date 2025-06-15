@@ -1,3 +1,49 @@
+# 🧩 NestJS Coding Challenge – User API
+
+Dieses Projekt ist eine einfache REST-API mit NestJS, die Benutzerdaten aus einer lokalen `users.json`-Datei liest und Endpunkte zur Verfügung stellt, um alle Benutzer oder einen einzelnen Benutzer anhand seiner ID abzurufen.
+
+---
+
+## 🚀 Features
+
+- `GET /v1/users` – Gibt eine Liste aller Benutzer zurück
+- `GET /v1/users/:id` – Gibt einen einzelnen Benutzer anhand seiner ID zurück
+- Fehlerbehandlung, wenn die Datei fehlt oder Daten ungültig sind
+- Unit Tests für Controller und Service
+- Lokale JSON-Datei als Datenquelle
+
+---
+
+## 📦 Installation
+
+1. **Repository klonen**  
+```bash
+git clone <REPO_URL>
+cd user-api
+
+2.Abhängigkeiten installieren
+npm install
+
+---
+
+🏁 Projekt starten
+npm run start
+Die API ist standardmäßig unter http://localhost:3000 erreichbar.
+Beispiel:
+http://localhost:3000/v1/users – alle Benutzer
+http://localhost:3000/v1/users/1 – Benutzer mit ID 1
+
+---
+
+🧪 Tests ausführen
+npm run test
+Die Tests decken sowohl den UsersService als auch den UsersController ab, inklusive:
+Rückgabe aller Benutzer
+Benutzer nach ID
+Fehlerbehandlung bei fehlender Datei
+
+---
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
